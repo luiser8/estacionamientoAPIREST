@@ -34,12 +34,30 @@ export const postPuesto = async(req, res) => {
 };
 export const putPuesto = async(req, res) => {
     const { id } = req.params;
-    const { disponibilidad } = req.body;
+    const { disponibilidad, estado } = req.body;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).send(`The id ${id} is not valid`);
     }
-    const newPuesto = { disponibilidad, _id: id };
+    const newPuesto = { disponibilidad, estado, _id: id };
+    await Puesto.findByIdAndUpdate(id, newPuesto, { new: true });
+
+    try{
+        res.json(newPuesto)
+    }catch(error){
+        res.status(409).json({error:error.message});
+    }
+};
+export const putChangeEstadoPuesto = async(req, res) => {
+    const { id } = req.params;
+    const { estado } = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).send(`The id ${id} is not valid`);
+    }
+
+    const newPuesto = { estado , _id: id };
+
     await Puesto.findByIdAndUpdate(id, newPuesto, { new: true });
 
     try{

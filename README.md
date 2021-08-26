@@ -27,7 +27,7 @@
 			tecleamos git clone https://github.com/luiser8/estacionamientoAPIREST.git
 		* Entramos con la consola / terminal en el proyecto descargado / clonado 
 		 	estacionamientoAPIREST
-			entando en la carpeta raiz del proyecto ejecutamos yarn install
+			estando en la carpeta raiz del proyecto ejecutamos yarn install
 			para instalar las dependencias necesarias
 		* En el archivo .env colocamos el puerto y el servidor local de mongoDB
 		* Ejecutamos nodemon index.js
