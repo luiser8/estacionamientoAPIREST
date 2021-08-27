@@ -4,7 +4,7 @@ import { getComprobante, getComprobanteForId, postComprobante, putComprobante, d
 const comprobanteRouter = express.Router();
 comprobanteRouter.get('/', getComprobante);
 comprobanteRouter.get('/:id', getComprobanteForId);
-comprobanteRouter.get('/codigo/:id', getComprobanteForCod);
+comprobanteRouter.get('/codigo/:cod/puesto/:id', getComprobanteForCod);
 comprobanteRouter.get('/puesto/:id', getComprobanteForPuesto);
 comprobanteRouter.post('/', postComprobante);
 comprobanteRouter.put('/:id', putComprobante);

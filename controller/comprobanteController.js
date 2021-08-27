@@ -20,9 +20,9 @@ export const getComprobanteForId = async(req, res) => {
     }
 };
 export const getComprobanteForCod = async(req, res) => {
-    const { id } = req.params;
+    const { cod, id } = req.params;
     try{
-        const comprobante = await Comprobante.findOne({'codigo': id});
+        const comprobante = await Comprobante.findOne({'codigo': cod, 'puestoId': id});
         res.status(200).json(comprobante)
     }catch(error){
         res.status(404).json({error:error.message});
