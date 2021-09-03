@@ -1,5 +1,5 @@
 import express from 'express';
-import { getFactura, getFacturaForId, postFactura, putFactura, deleteFactura } from '../controller/facturaController.js';
+import { getFactura, getFacturaForId, postFactura, putFactura, deleteFactura } from '../controllers/facturaController.js';
 
 const facturaRouter = express.Router();
 facturaRouter.get('/', getFactura);

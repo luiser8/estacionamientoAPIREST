@@ -1,5 +1,5 @@
 import express from 'express';
-import { getPuesto, getPuestoForId, postPuesto, putPuesto, deletePuesto, putChangeEstadoPuesto } from '../controller/puestosController.js';
+import { getPuesto, getPuestoForId, postPuesto, putPuesto, deletePuesto, putChangeEstadoPuesto } from '../controllers/puestosController.js';
 
 const puestosRouter = express.Router();
 puestosRouter.get('/', getPuesto);

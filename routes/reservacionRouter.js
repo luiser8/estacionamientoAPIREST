@@ -1,5 +1,5 @@
 import express from 'express';
-import { getReservacion, getReservacionForId, postReservacion, putReservacion, deleteReservacion, getReservacionForPuesto } from '../controller/reservacionController.js';
+import { getReservacion, getReservacionForId, postReservacion, putReservacion, deleteReservacion, getReservacionForPuesto } from '../controllers/reservacionController.js';
 
 const reservacionRouter = express.Router();
 reservacionRouter.get('/', getReservacion);

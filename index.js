@@ -6,12 +6,14 @@ import createError from 'http-errors';
 import morgan from 'morgan';
 import cors from 'cors';
 import path from'path';
-import './db.js';
+import jwt from'./helpers/jwt.js';
+import './helpers/db.js';
 import puestosRouter from './routes/puestosRouter.js';
 import usuariosRouter from './routes/usuariosRouter.js';
 import facturaRouter from './routes/facturaRouter.js';
 import reservacionRouter from './routes/reservacionRouter.js';
 import comprobanteRouter from './routes/comprobanteRouter.js';
+import authRouter from './routes/authRouter.js';
 
 //Express inicializacion
 var app = express();
@@ -32,9 +34,13 @@ app.use(body_parser.json());
 app.use(body_parser.urlencoded({
     extended: true 
 }));
+
 app.use(morgan('dev'));
+// use JWT auth to secure the api
+app.use(jwt());
 
 //routes
+app.use('/api/v1/auth/', authRouter);
 app.use('/api/v1/puestos', puestosRouter);
 app.use('/api/v1/usuarios', usuariosRouter);
 app.use('/api/v1/facturas', facturaRouter);

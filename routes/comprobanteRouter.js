@@ -1,5 +1,5 @@
 import express from 'express';
-import { getComprobante, getComprobanteForId, postComprobante, putComprobante, deleteComprobante, getComprobanteForCod, getComprobanteForPuesto } from '../controller/comprobanteController.js';
+import { getComprobante, getComprobanteForId, postComprobante, putComprobante, deleteComprobante, getComprobanteForCod, getComprobanteForPuesto } from '../controllers/comprobanteController.js';
 
 const comprobanteRouter = express.Router();
 comprobanteRouter.get('/', getComprobante);
